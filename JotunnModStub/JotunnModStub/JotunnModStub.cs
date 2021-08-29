@@ -8,11 +8,11 @@ namespace JotunnModStub
     {
         public const string PluginGUID = "com.jotunn.jotunnmodstub";
         public const string PluginName = "JotunnModStub";
-        public const string PluginVersion = "0.0.1";
+        public const string PluginVersion = "1.0.0";
 
         private void Awake()
         {
-            Jotunn.Logger.LogMessage("Hello World!");
+            Jotunn.Logger.LogInfo("Hello World!");
         }
 
     }
