@@ -1,24 +1,21 @@
 ﻿using BepInEx;
 using HarmonyLib;
-using BepInEx.Configuration;
 
-namespace JumpForcePatch
+namespace JotunnModStub
 {
     [BepInPlugin(PluginGUID, PluginName, PluginVersion)]
-    public class JumpForcePatch : BaseUnityPlugin
+    [BepInDependency(Jotunn.Main.ModGuid)]
+    public class JotunnModStub : BaseUnityPlugin
     {
-        public const string PluginGUID = "yarikmix.jumpforcepatch";
-        public const string PluginName = "JumpForcePatch";
+        public const string PluginGUID = "com.jotunn.jotunnmodstub";
+        public const string PluginName = "JotunnModStub";
         public const string PluginVersion = "1.0.0";
-
-        public static ConfigEntry<int> JumpForceConfig;
 
         Harmony harmony = new Harmony(PluginGUID);
 
-        void Awake()
+        private void Awake()
         {
-            ConfigDeploy();
-            harmony.PatchAll();
+            harmony?.PatchAll();
         }
 
         private void OnDestroy()
@@ -31,16 +28,9 @@ namespace JumpForcePatch
         {
             static void Prefix(ref float ___m_jumpForce)
             {
-                ___m_jumpForce = JumpForceConfig.Value;
+                ___m_jumpForce = 50f;
                 print($"Jump force: {___m_jumpForce}");
             }
-        }
-
-
-        public void ConfigDeploy()
-        {
-            Config.SaveOnConfigSet = true;
-            JumpForceConfig = Config.Bind("Jump Force", "Jump Force", 10, new ConfigDescription("Jump Force", new AcceptableValueRange<int>(0, 100)));
         }
 
     }
