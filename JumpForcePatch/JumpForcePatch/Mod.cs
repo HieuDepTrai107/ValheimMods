@@ -1,5 +1,6 @@
 ﻿using BepInEx;
 using HarmonyLib;
+using BepInEx.Configuration;
 
 namespace JotunnModStub
 {
@@ -11,10 +12,13 @@ namespace JotunnModStub
         public const string PluginName = "JotunnModStub";
         public const string PluginVersion = "1.0.0";
 
+        public static ConfigEntry<float> JumpForceConfig;
+
         Harmony harmony = new Harmony(PluginGUID);
 
         private void Awake()
         {
+            ConfigDeploy();
             harmony?.PatchAll();
         }
 
@@ -28,9 +32,15 @@ namespace JotunnModStub
         {
             static void Prefix(ref float ___m_jumpForce)
             {
-                ___m_jumpForce = 50f;
+                ___m_jumpForce = JumpForceConfig.Value;
                 print($"Jump force: {___m_jumpForce}");
             }
+        }
+
+        public void ConfigDeploy()
+        {
+            Config.SaveOnConfigSet = true;
+            JumpForceConfig = Config.Bind("Jump Force", "Jump Force", 10f, "Jump Force");
         }
 
     }
