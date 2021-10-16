@@ -14,6 +14,5 @@ namespace JotunnModStub
         {
             Jotunn.Logger.LogInfo("Hello World!");
         }
-
     }
 }
