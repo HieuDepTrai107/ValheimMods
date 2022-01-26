@@ -10,7 +10,7 @@ namespace JotunnModStub
         public const string PluginName = "JotunnModStub";
         public const string PluginVersion = "1.0.0";
 
-        private void Awake()
+        public void Awake()
         {
             Jotunn.Logger.LogInfo("Hello World!");
         }

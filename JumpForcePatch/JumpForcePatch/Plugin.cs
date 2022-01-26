@@ -16,13 +16,13 @@ namespace JotunnModStub
 
         Harmony harmony = new Harmony(PluginGUID);
 
-        private void Awake()
+        public void Awake()
         {
             ConfigDeploy();
             harmony?.PatchAll();
         }
 
-        private void OnDestroy()
+        public void OnDestroy()
         {
             harmony?.UnpatchSelf();
         }
