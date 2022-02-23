@@ -14,7 +14,7 @@ namespace JotunnModStub
 
         public static ConfigEntry<float> JumpForceConfig;
 
-        Harmony harmony = new Harmony(PluginGUID);
+        public static Harmony harmony = new Harmony(PluginGUID);
 
         public void Awake()
         {
@@ -28,9 +28,9 @@ namespace JotunnModStub
         }
 
         [HarmonyPatch(typeof(Character), nameof(Character.Jump))]
-        class Jump_Patch
+        public static class Jump_Patch
         {
-            static void Prefix(ref float ___m_jumpForce)
+            public static void Prefix(ref float ___m_jumpForce)
             {
                 ___m_jumpForce = JumpForceConfig.Value;
                 print($"Jump force: {___m_jumpForce}");
