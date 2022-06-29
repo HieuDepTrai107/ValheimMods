@@ -43,19 +43,6 @@ if ($Target.Equals("Debug")) {
     $plug = New-Item -Type Directory -Path "$DeployPath\$name" -Force
     Write-Host "Copy $TargetAssembly to $plug"
     Copy-Item -Path "$TargetPath\$name.dll" -Destination "$plug" -Force
-    Copy-Item -Path "$TargetPath\$name.pdb" -Destination "$plug" -Force
-    Copy-Item -Path "$TargetPath\$name.dll.mdb" -Destination "$plug" -Force
-}
-
-if($Target.Equals("Release")) {
-    Write-Host "Packaging for ThunderStore..."
-    $Package="Package"
-    $PackagePath="$ProjectPath\$Package"
-
-    Write-Host "$PackagePath\$TargetAssembly"
-    Copy-Item -Path "$TargetPath\$TargetAssembly" -Destination "$PackagePath\plugins\$TargetAssembly" -Force
-    Copy-Item -Path "$ProjectPath\README.md" -Destination "$PackagePath\README.md" -Force
-    Compress-Archive -Path "$PackagePath\*" -DestinationPath "$TargetPath\$TargetAssembly.zip" -Force
 }
 
 # Pop Location
