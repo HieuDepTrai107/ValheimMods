@@ -1,0 +1,80 @@
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\bin\Debug\DisplayPlayerHP.dll.config
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\bin\Debug\DisplayPlayerHP.dll
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\bin\Debug\DisplayPlayerHP.pdb
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\bin\Debug\0Harmony.dll
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\bin\Debug\Jotunn.dll
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\bin\Debug\Mono.Cecil.dll
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\bin\Debug\Mono.Cecil.Pdb.dll
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\bin\Debug\Mono.Cecil.Rocks.dll
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\bin\Debug\MonoMod.exe
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\bin\Debug\MonoMod.RuntimeDetour.dll
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\bin\Debug\MonoMod.Utils.dll
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\bin\Debug\0Harmony.xml
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\bin\Debug\Jotunn.pdb
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\bin\Debug\Jotunn.xml
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\bin\Debug\Mono.Cecil.pdb
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\bin\Debug\Mono.Cecil.Mdb.pdb
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\bin\Debug\Mono.Cecil.Pdb.pdb
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\bin\Debug\Mono.Cecil.Rocks.pdb
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\bin\Debug\MonoMod.xml
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\bin\Debug\MonoMod.RuntimeDetour.xml
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\bin\Debug\MonoMod.Utils.xml
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\obj\Debug\DisplayPlayerHP.csproj.CoreCompileInputs.cache
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\obj\Debug\DisplayPlayerHP.csproj.CopyComplete
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\obj\Debug\DisplayPlayerHP.dll
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\obj\Debug\DisplayPlayerHP.pdb
+C:\Users\jmiha\Desktop\Всякое\Valheim\Моды\Мои моды\NexusMods\Display Player HP\DisplayPlayerHP\obj\Debug\DisplayPlayerHP.csproj.AssemblyReference.cache
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\bin\Debug\DisplayPlayerHP.dll.config
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\bin\Debug\DisplayPlayerHP.dll
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\bin\Debug\DisplayPlayerHP.pdb
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\bin\Debug\0Harmony.dll
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\bin\Debug\Jotunn.dll
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\bin\Debug\Mono.Cecil.dll
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\bin\Debug\Mono.Cecil.Mdb.dll
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\bin\Debug\Mono.Cecil.Pdb.dll
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\bin\Debug\Mono.Cecil.Rocks.dll
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\bin\Debug\MonoMod.exe
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\bin\Debug\MonoMod.RuntimeDetour.dll
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\bin\Debug\MonoMod.Utils.dll
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\bin\Debug\0Harmony.xml
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\bin\Debug\Jotunn.pdb
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\bin\Debug\Jotunn.xml
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\bin\Debug\Mono.Cecil.pdb
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\bin\Debug\Mono.Cecil.Mdb.pdb
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\bin\Debug\Mono.Cecil.Pdb.pdb
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\bin\Debug\Mono.Cecil.Rocks.pdb
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\bin\Debug\MonoMod.xml
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\bin\Debug\MonoMod.RuntimeDetour.xml
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\bin\Debug\MonoMod.Utils.xml
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\obj\Debug\DisplayPlayerHP.csproj.CoreCompileInputs.cache
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\obj\Debug\DisplayPlayerHP.csproj.CopyComplete
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\obj\Debug\DisplayPlayerHP.dll
+D:\Valheim\Nexusmods\DisplayPlayerHealthAndStamina\DisplayPlayerHP\obj\Debug\DisplayPlayerHP.pdb
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\bin\Debug\DisplayPlayerHP.dll.config
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\bin\Debug\DisplayPlayerHP.dll
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\bin\Debug\DisplayPlayerHP.pdb
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\bin\Debug\0Harmony.dll
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\bin\Debug\Jotunn.dll
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\bin\Debug\Mono.Cecil.dll
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\bin\Debug\Mono.Cecil.Mdb.dll
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\bin\Debug\Mono.Cecil.Pdb.dll
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\bin\Debug\Mono.Cecil.Rocks.dll
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\bin\Debug\MonoMod.exe
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\bin\Debug\MonoMod.RuntimeDetour.dll
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\bin\Debug\MonoMod.Utils.dll
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\bin\Debug\0Harmony.xml
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\bin\Debug\Jotunn.pdb
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\bin\Debug\Jotunn.xml
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\bin\Debug\Mono.Cecil.pdb
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\bin\Debug\Mono.Cecil.Mdb.pdb
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\bin\Debug\Mono.Cecil.Pdb.pdb
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\bin\Debug\Mono.Cecil.Rocks.pdb
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\bin\Debug\MonoMod.xml
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\bin\Debug\MonoMod.RuntimeDetour.xml
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\bin\Debug\MonoMod.Utils.xml
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\obj\Debug\DisplayPlayerHP.csproj.AssemblyReference.cache
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\obj\Debug\DisplayPlayerHP.csproj.CoreCompileInputs.cache
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\obj\Debug\DisplayPlayerHP.csproj.CopyComplete
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\obj\Debug\DisplayPlayerHP.dll
+D:\Valheim\Nexusmods\DisplayPlayerHP\DisplayPlayerHP\obj\Debug\DisplayPlayerHP.pdb
