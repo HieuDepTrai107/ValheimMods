@@ -1,4 +1,5 @@
 ﻿using BepInEx;
+using HarmonyLib;
 
 namespace JotunnModStub
 {
@@ -10,9 +11,16 @@ namespace JotunnModStub
         public const string PluginName = "JotunnModStub";
         public const string PluginVersion = "1.0.0";
 
+        public static Harmony harmony = new Harmony(PluginGUID);
+
         public void Awake()
         {
-            Jotunn.Logger.LogInfo("Hello World!");
+            harmony?.PatchAll();
+        }
+
+        public void OnDestroy()
+        {
+            harmony?.UnpatchSelf();
         }
     }
 }
