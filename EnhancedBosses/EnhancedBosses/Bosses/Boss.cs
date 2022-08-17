@@ -24,20 +24,14 @@ namespace EnhancedBosses
 			}
 		}
 
-		public bool IsPositionChanges()
+		public void UpdatePosition()
 		{
-			return character.transform.position != position;
-		}
+			position = character.transform.position;
 
-		public void Move()
-		{
 			if (pin != null)
 			{
-				Minimap.instance.RemovePin(pin);
+				pin.m_pos = position;
 			}
-
-			pin = PinManager.AddBossPin(position);
-			position = character.transform.position;
 		}
 	}
 }

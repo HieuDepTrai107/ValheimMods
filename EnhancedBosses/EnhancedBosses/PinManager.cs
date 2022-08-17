@@ -32,10 +32,7 @@ namespace EnhancedBosses
 				Boss boss = Main.bosses[i];
 				if (boss.character != null)
 				{
-					if (boss.IsPositionChanges())
-					{
-						boss.Move();
-					}
+					boss.UpdatePosition();
 				}
 				else
 				{
