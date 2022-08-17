@@ -38,16 +38,15 @@ namespace EnhancedBosses.Bosses
             var playersCount = ZNet.instance.GetNrOfPlayers();
             var min = Main.YagluthMinMinions.Value + (playersCount - 1) * Main.YagluthMinionsMultiplier.Value;
             var max = Main.YagluthMaxMinions.Value + (playersCount - 1) * Main.YagluthMinionsMultiplier.Value;
-            Utils.SpawnCreatures(character, YagluthCreatures, min, max);
+            Helpers.SpawnCreatures(character, YagluthCreatures, min, max);
         }
 
-        public static GameObject YagluthSummon()
+        public static void YagluthSummon()
         {
             GameObject gameObject = PrefabManager.Instance.CreateClonedPrefab("GoblinKing_Summon", "GoblinKing_Nova");
             ItemDrop.ItemData.SharedData shared = gameObject.GetComponent<ItemDrop>().m_itemData.m_shared;
-            shared.m_aiAttackInterval = 60f;
             shared.m_name = "GoblinKing_Summon";
-            return gameObject;
+            PrefabManager.Instance.AddPrefab(gameObject);
         }
     }
 }

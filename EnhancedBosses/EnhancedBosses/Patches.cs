@@ -30,15 +30,48 @@ namespace EnhancedBosses
             }
         }
 
+        [HarmonyPatch(typeof(BaseAI), nameof(BaseAI.CanUseAttack))]
+        public static class BaseAI_CanUseAttack
+        {
+            public static void Postfix(BaseAI __instance, Character character, ItemDrop.ItemData item, ref bool __result)
+            {
+                if (character.name.Contains("Eikthyr"))
+                {
+                    Eikthyr eikthyr = character.gameObject.GetComponent<Eikthyr>();
+                    if (item.m_shared.m_name == "Eikthyr_summon")
+                    {
+                        if (eikthyr.GetMinionsCount() > eikthyr.GetMaxMinions())
+                        {
+                            __result = false;
+                        }
+                    }
+                }
+                else if (character.name.Contains("gd_king"))
+                {
+                    Elder elder = character.gameObject.GetComponent<Elder>();
+                    if (item.m_shared.m_name == "gd_king_summon")
+                    {
+                        if (elder.GetMinionsCount() > elder.GetMaxMinions())
+                        {
+                            __result = false;
+                        }
+                    }
+                }
+            }
+        }
+
         [HarmonyPatch(typeof(MonsterAI), nameof(MonsterAI.DoAttack))]
         public static class MonsterAI_DoAttack_Postfix
         {
             public static bool Prefix(MonsterAI __instance)
             {
-                Elder elder = __instance.gameObject.GetComponent<Elder>();
-                if (elder != null && (elder.isHealing || elder.isTeleporting))
+                if (__instance.name.Contains("gd_king"))
                 {
-                    return false;
+                    Elder elder = __instance.gameObject.GetComponent<Elder>();
+                    if (elder.isHealing || elder.isTeleporting)
+                    {
+                        return false;
+                    }
                 }
 
                 return true;
@@ -53,7 +86,7 @@ namespace EnhancedBosses
                 var character = __instance.m_character as Character;
                 var weapon = __instance.m_weapon;
 
-                if (Utils.isEikthyr(character))
+                if (Helpers.isEikthyr(character))
                 {
                     var eikthyr = character.gameObject.GetComponent<Eikthyr>();
                     return eikthyr.Process_Attack(__instance);
@@ -62,22 +95,22 @@ namespace EnhancedBosses
                 {
                     weapon.m_shared.m_attackStatusEffect = PrefabManager.Cache.GetPrefab<SE_Electric>("EB_Electric");
                 }
-                else if (Utils.isElder(character))
+                else if (Helpers.isElder(character))
                 {
                     var elder = character.gameObject.GetComponent<Elder>();
                     return elder.Process_Attack(__instance);
                 }
-                else if (Utils.isBonemass(character))
+                else if (Helpers.isBonemass(character))
                 {
                     var bonemass = character.gameObject.GetComponent<Bonemass>();
                     return bonemass.Process_Attack(__instance);
                 }
-                else if (Utils.isModer(character))
+                else if (Helpers.isModer(character))
                 {
                     var moder = character.gameObject.GetComponent<Moder>();
                     return moder.Process_Attack(__instance);
                 }
-                else if (Utils.isYagluth(character))
+                else if (Helpers.isYagluth(character))
                 {
                     var yagluth = character.gameObject.GetComponent<Yagluth>();
                     return yagluth.Process_Attack(__instance);
@@ -119,9 +152,9 @@ namespace EnhancedBosses
                 {
                     var component = GameCamera.instance.gameObject.GetComponent<PostProcessingBehaviour>();
 
-                    var ratio = Utils.Lerp(ref component.m_Vignette.model.m_Settings.intensity, NewVignetteIntensity, DeltaVignetteIntensity);
-                    Utils.Lerp(ref component.m_ChromaticAberration.model.m_Settings.intensity, NewChromaticAberrationIntensity, DeltaChromaticAberrationIntensity);
-                    Utils.Lerp(ref component.m_ColorGrading.model.m_Settings.basic.saturation, NewColorGradingSaturation, DeltaColorGradingSaturation);
+                    var ratio = Helpers.Lerp(ref component.m_Vignette.model.m_Settings.intensity, NewVignetteIntensity, DeltaVignetteIntensity);
+                    Helpers.Lerp(ref component.m_ChromaticAberration.model.m_Settings.intensity, NewChromaticAberrationIntensity, DeltaChromaticAberrationIntensity);
+                    Helpers.Lerp(ref component.m_ColorGrading.model.m_Settings.basic.saturation, NewColorGradingSaturation, DeltaColorGradingSaturation);
 
                     if (ratio == 1)
                     {

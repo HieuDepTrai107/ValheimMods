@@ -15,8 +15,7 @@ namespace EnhancedBosses.Bosses
 
         public static List<string> ModerCreaturesGround = new List<string>()
         {
-            "Wolf",
-            "RRRM_Frostling"
+            "Wolf"
         };
 
         public void Awake()
@@ -50,7 +49,7 @@ namespace EnhancedBosses.Bosses
             var playersCount = ZNet.instance.GetNrOfPlayers();
             var min = Main.ModerMinMinions.Value + (playersCount - 1) * Main.ModerMinionsMultiplier.Value;
             var max = Main.ModerMaxMinions.Value + (playersCount - 1) * Main.ModerMinionsMultiplier.Value;
-            Utils.SpawnCreatures(character, ModerCreaturesAir, min, max);
+            Helpers.SpawnCreatures(character, ModerCreaturesAir, min, max);
         }
 
         public void SpawnGround()
@@ -58,16 +57,15 @@ namespace EnhancedBosses.Bosses
             var playersCount = ZNet.instance.GetNrOfPlayers();
             var min = Main.ModerMinMinions.Value + (playersCount - 1) * Main.ModerMinionsMultiplier.Value;
             var max = Main.ModerMaxMinions.Value + (playersCount - 1) * Main.ModerMinionsMultiplier.Value;
-            Utils.SpawnCreatures(character, ModerCreaturesGround, min, max);
+            Helpers.SpawnCreatures(character, ModerCreaturesGround, min, max);
         }
 
-        public static GameObject ModerSummon()
+        public static void ModerSummon()
         {
             GameObject gameObject = PrefabManager.Instance.CreateClonedPrefab("dragon_summon", "dragon_spit_shotgun");
-            ItemDrop.ItemData.SharedData shared = gameObject.GetComponent<ItemDrop>().m_itemData.m_shared;
-            shared.m_aiAttackInterval = 30f;
-            shared.m_name = "dragon_summon";
-            return gameObject;
+            ItemDrop item = gameObject.GetComponent<ItemDrop>();
+            item.m_itemData.m_shared.m_name = "dragon_summon";
+            PrefabManager.Instance.AddPrefab(gameObject);
         }
     }
 }

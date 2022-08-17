@@ -20,7 +20,7 @@ namespace EnhancedBosses.StatusEffects
 
 		public SE_Electric()
 		{
-			m_name = "Напряжение";
+			m_name = "Voltage";
 			name = "EB_Electric";
 			m_ttl = m_baseTTL;
 			m_icon = AssetUtils.LoadSpriteFromFile("EnhancedBosses/Assets/voltage.png");
@@ -56,7 +56,7 @@ namespace EnhancedBosses.StatusEffects
 			{
 				if (!m_character.IsTeleporting() && _transform != null)
 				{
-					Tuple<Vector3, Vector3> targetPosition = Utils.GetTargetPosition(m_character);
+					Tuple<Vector3, Vector3> targetPosition = Helpers.GetTargetPosition(m_character);
 					_transform.position = targetPosition.Item1;
 					_transform.forward = targetPosition.Item2;
 				}
@@ -92,7 +92,7 @@ namespace EnhancedBosses.StatusEffects
 
 		public void CreateShock()
 		{
-			Tuple<Vector3, Vector3> targetPosition = Utils.GetTargetPosition(m_character);
+			Tuple<Vector3, Vector3> targetPosition = Helpers.GetTargetPosition(m_character);
 			if (targetPosition != null)
             {
 				_shockEffect = Object.Instantiate<GameObject>(ZNetScene.instance.GetPrefab("fx_Lightning"), targetPosition.Item1, Quaternion.identity);

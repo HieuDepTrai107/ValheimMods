@@ -100,3 +100,6 @@ D:\Valheim\Nexusmods\EnhancedBosses\EnhancedBosses\bin\Debug\MonoMod.xml
 D:\Valheim\Nexusmods\EnhancedBosses\EnhancedBosses\bin\Debug\MonoMod.RuntimeDetour.xml
 D:\Valheim\Nexusmods\EnhancedBosses\EnhancedBosses\bin\Debug\MonoMod.Utils.xml
 D:\Valheim\Nexusmods\EnhancedBosses\EnhancedBosses\obj\Debug\EnhancedBosses.csproj.CopyComplete
+D:\Valheim\Nexusmods\EnhancedBosses\EnhancedBosses\bin\Debug\Newtonsoft.Json.dll
+D:\Valheim\Nexusmods\EnhancedBosses\EnhancedBosses\bin\Debug\Newtonsoft.Json.xml
+D:\Valheim\Nexusmods\EnhancedBosses\EnhancedBosses\obj\Debug\EnhancedBosses.csproj.AssemblyReference.cache

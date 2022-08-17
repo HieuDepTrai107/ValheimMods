@@ -3,7 +3,7 @@ using Jotunn.Managers;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using EnhancedBosses.StatusEffects;
-using Log = Jotunn.Logger;
+using System.Linq;
 
 namespace EnhancedBosses.Bosses
 {
@@ -29,9 +29,9 @@ namespace EnhancedBosses.Bosses
 
         public void Awake()
         {
-            character = gameObject.GetComponent<Character>();
-            monsterAI = gameObject.GetComponent<MonsterAI>();
-            baseAI = gameObject.GetComponent<BaseAI>();
+            character = base.GetComponent<Character>();
+            monsterAI = base.GetComponent<MonsterAI>();
+            baseAI = base.GetComponent<BaseAI>();
         }
 
         public void Update()
@@ -49,7 +49,7 @@ namespace EnhancedBosses.Bosses
                 {
                     EatTree();
                 }
-            } 
+            }
         }
         
         public bool Process_Attack(Attack attack)
@@ -61,9 +61,15 @@ namespace EnhancedBosses.Bosses
                 SpawnMinions();
                 return false;
             }
+
             else if (weapon.m_dropPrefab == Main.ElderRoots)
             {
-                SpawnDeathsquitos();
+                
+            }
+
+            else if (weapon.m_dropPrefab == Main.ElderScream)
+            {
+                
             }
 
             if (character.GetHealthPercentage() < 0.5f)
@@ -78,55 +84,6 @@ namespace EnhancedBosses.Bosses
             return true;
         }
 
-        public void SpawnDeathsquitos()
-        {
-            Vector3 position = character.transform.position;
-
-            int count = 3;
-            float radius = 10f;
-
-            for (int i = 0; i < count; i++)
-            {
-                Vector3 vector = new Vector3(position.x + Random.Range(-radius, radius), position.y, position.z + Random.Range(-radius, radius));
-                SpawnDeathsquito(vector);
-            }
-        }
-
-        public void SpawnDeathsquito(Vector3 position)
-        {
-            GameObject prefab = ZNetScene.instance.GetPrefab("Deathsquito");
-
-            CharacterTimedDestruction td = prefab.GetComponent<CharacterTimedDestruction>();
-            if (td != null)
-            {
-                td.m_timeoutMin = 10f;
-                td.m_timeoutMax = td.m_timeoutMin;
-                td.m_triggerOnAwake = true;
-                td.enabled = true;
-            }
-
-            GameObject go = Object.Instantiate(prefab, position, Quaternion.identity);
-            Character ch = go.GetComponent<Character>();
-            
-            ch.transform.localScale = 0.4f * Vector3.one;
-            ch.m_faction = Character.Faction.ForestMonsters;
-            ch.m_baseAI.SetHuntPlayer(true);
-            ch.m_level = Random.Range(1, 3);
-
-            var drop = ch.GetComponent<CharacterDrop>();
-            drop.m_drops.Clear();
-            drop.m_dropsEnabled = false;
-
-            Humanoid humanoid = ch as Humanoid;
-            humanoid.m_defaultItems = new GameObject[]
-            {
-                DeathsquitoSting()
-            };
-
-            Object.Instantiate(ZNetScene.instance.GetPrefab("fx_float_hitwater"), ch.transform.position, Quaternion.identity);
-            
-        }
-
         public void CastShield()
         {
             SE_Shielded se_shielded = ScriptableObject.CreateInstance<SE_Shielded>();
@@ -138,7 +95,7 @@ namespace EnhancedBosses.Bosses
         {
             if (character.GetHealthPercentage() < 0.5f)
             {
-                TreeBase tree = Utils.FindNearTree(character.transform.position, 20f);
+                TreeBase tree = Helpers.FindNearTree(character.transform.position, 20f);
                 if (tree != null)
                 {
                     isHealing = true;
@@ -146,7 +103,7 @@ namespace EnhancedBosses.Bosses
                     character.m_zanim.SetTrigger("scream");
                     await Task.Delay(200);
                     character.Heal(treeHP);
-                    Utils.DestroyTree(tree);
+                    Helpers.DestroyTree(tree);
                     isHealing = false;
                 }
             }
@@ -163,20 +120,19 @@ namespace EnhancedBosses.Bosses
                     float distanceToTarget = Vector3.Distance(targetPosition, character.transform.position);
                     if (distanceToTarget > teleportDistance)
                     {
-                        var tree = Utils.FindNearTree(targetPosition, 20f);
+                        var tree = Helpers.FindNearTree(targetPosition, 20f);
                         if (tree != null)
                         {
                             if (Vector3.Distance(targetPosition, tree.transform.position) < distanceToTarget)
                             {
                                 isTeleporting = true;
                                 baseAI.StopMoving();
-                                teleportTimer = Main.ElderTeleportCooldown.Value;
                                 character.m_zanim.SetTrigger("spawn");
                                 await Task.Delay(500);
                                 character.transform.position = tree.transform.position;
                                 baseAI.StopMoving();
                                 character.Heal(treeHP);
-                                Utils.DestroyTree(tree);
+                                Helpers.DestroyTree(tree);
                                 isTeleporting = false;
                             }
                         }
@@ -198,48 +154,73 @@ namespace EnhancedBosses.Bosses
             // test.m_timeout = 1f;
         }
 
+        public void Spawn(float radius = 10f)
+        {
+            Vector3 position = character.transform.position;
+            Vector3 vector = new Vector3(position.x + Random.Range(-radius, radius), position.y, position.z + Random.Range(-radius, radius));
+
+            GameObject prefab = Helpers.GetRandomCreature(ElderCreatures);
+            GameObject go = Object.Instantiate(prefab, vector, Quaternion.identity);
+            Character ch = go.GetComponent<Character>();
+
+            ch.m_baseAI.SetTargetInfo(Player.m_localPlayer.GetZDOID());
+            ch.m_baseAI.SetHuntPlayer(true);
+            ch.m_level = Random.Range(1, 3);
+            Object.Instantiate(ZNetScene.instance.GetPrefab("vfx_Potion_stamina_medium"), position, Quaternion.identity);
+            Object.Instantiate(ZNetScene.instance.GetPrefab("vfx_WishbonePing"), position, Quaternion.identity);
+        }
+
+
         public void SpawnMinions()
         {
             var playersCount = ZNet.instance.GetNrOfPlayers();
-            var min = Main.ElderMinMinions.Value + (playersCount - 1) * Main.ElderMinionsMultiplier.Value;
-            var max = Main.ElderMaxMinions.Value + (playersCount - 1) * Main.ElderMinionsMultiplier.Value;
-            Utils.SpawnCreatures(character, ElderCreatures, min, max);
+            var min = Main.ElderSpawnMinMinions.Value + (playersCount - 1) * Main.ElderSpawnMinionsMultiplier.Value;
+            var max = Main.ElderSpawnMaxMinions.Value + (playersCount - 1) * Main.ElderSpawnMinionsMultiplier.Value;
+            int count = Helpers.GetCreaturesCount(character, min, max);
+            for (int i = 0; i < count; i++)
+            {
+                Spawn();
+            }
         }
 
-        public GameObject DeathsquitoSting()
+        public int GetMinionsCount()
         {
-            GameObject gameObject = PrefabManager.Instance.CreateClonedPrefab("ElderDeathsquito_sting", "Deathsquito_sting");
-            ItemDrop.ItemData.SharedData shared = gameObject.GetComponent<ItemDrop>().m_itemData.m_shared;
-            shared.m_name = "ElderDeathsquito_sting";
-            shared.m_damages.m_blunt = 0f;
-            shared.m_damages.m_chop = 0f;
-            shared.m_damages.m_damage = 0f;
-            shared.m_damages.m_fire = 0f;
-            shared.m_damages.m_frost = 0f;
-            shared.m_damages.m_spirit = 0f;
-            shared.m_damages.m_slash = 0f;
-            shared.m_damages.m_pierce = 10f;
-            shared.m_damages.m_pickaxe = 0f;
-            shared.m_damages.m_lightning = 0f;
-            return gameObject;
+            int minionsCount = 0;
+            foreach (BaseAI baseAI in BaseAI.GetAllInstances())
+            {
+                if (ElderCreatures.Any(e => baseAI.name.Contains(e)))
+                {
+                    float num = Utils.DistanceXZ(baseAI.transform.position, character.transform.position);
+                    if (num < 25f)
+                    {
+                        minionsCount++;
+                    }
+                }
+            }
+
+            return minionsCount;
         }
 
-        public static GameObject ElderSummon()
+        public int GetMaxMinions()
+        {
+            var playersCount = ZNet.instance.GetNrOfPlayers();
+            return Main.ElderMaxMinions.Value + (playersCount - 1) * Main.ElderMaxMinionsMultiplier.Value;
+        }
+
+        public static void ElderSummon()
         {
             GameObject gameObject = PrefabManager.Instance.CreateClonedPrefab("gd_king_summon", "gd_king_rootspawn");
-            ItemDrop.ItemData.SharedData shared = gameObject.GetComponent<ItemDrop>().m_itemData.m_shared;
-            shared.m_aiAttackInterval = Main.ElderSummonCooldown.Value;
-            shared.m_name = "gd_king_summon";
-            return gameObject;
+            ItemDrop item = gameObject.GetComponent<ItemDrop>();
+            item.m_itemData.m_shared.m_name = "gd_king_summon";
+            PrefabManager.Instance.AddPrefab(gameObject);
         }
 
-        public static GameObject ElderShield()
+        public static void ElderShield()
         {
             GameObject gameObject = PrefabManager.Instance.CreateClonedPrefab("gd_king_shield", "gd_king_rootspawn");
-            ItemDrop.ItemData.SharedData shared = gameObject.GetComponent<ItemDrop>().m_itemData.m_shared;
-            shared.m_aiAttackInterval = Main.ElderShieldCooldown.Value;
-            shared.m_name = "gd_king_shield";
-            return gameObject;
+            ItemDrop item = gameObject.GetComponent<ItemDrop>();
+            item.m_itemData.m_shared.m_name = "gd_king_shield";
+            PrefabManager.Instance.AddPrefab(gameObject);
         }
     }
 }

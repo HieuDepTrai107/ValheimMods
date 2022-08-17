@@ -81,9 +81,9 @@ namespace EnhancedBosses.StatusEffects
             }
             component.m_Vignette.model.m_Settings.color = Color.Lerp(rainbowcolors[rainbowcurrent], rainbowcolors[rainbownext], rainbowtimer / rainbowchangeevery);
 
-            Utils.Lerp(ref component.m_Vignette.model.m_Settings.intensity, NewVignetteIntensity, DeltaVignetteIntensity);
-            Utils.Lerp(ref component.m_ChromaticAberration.model.m_Settings.intensity, NewChromaticAberrationIntensity, DeltaChromaticAberrationIntensity);
-            Utils.Lerp(ref component.m_ColorGrading.model.m_Settings.basic.saturation, NewColorGradingSaturation, DeltaColorGradingSaturation);
+            Helpers.Lerp(ref component.m_Vignette.model.m_Settings.intensity, NewVignetteIntensity, DeltaVignetteIntensity);
+            Helpers.Lerp(ref component.m_ChromaticAberration.model.m_Settings.intensity, NewChromaticAberrationIntensity, DeltaChromaticAberrationIntensity);
+            Helpers.Lerp(ref component.m_ColorGrading.model.m_Settings.basic.saturation, NewColorGradingSaturation, DeltaColorGradingSaturation);
 
             base.UpdateStatusEffect(dt);
         }

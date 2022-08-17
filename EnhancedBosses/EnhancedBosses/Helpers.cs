@@ -1,6 +1,8 @@
 ﻿using Jotunn.Managers;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 using Log = Jotunn.Logger;
@@ -9,7 +11,7 @@ using Random = UnityEngine.Random;
 
 namespace EnhancedBosses
 {
-    class Utils
+    class Helpers
     {
         public static void PrintWeapons(string name)
         {
@@ -218,6 +220,11 @@ namespace EnhancedBosses
             tree.gameObject.SetActive(value: false);
             tree.m_nview.Destroy();
         }
-
+        public static Dictionary<string, Dictionary<string, Main.ItemInfo>> DeserializeFile(string filename)
+        {
+            string path = Path.Combine(Main.ModPath, filename);
+            string json = File.ReadAllText(path);
+            return JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Main.ItemInfo>>>(json);
+        }
     }
 }

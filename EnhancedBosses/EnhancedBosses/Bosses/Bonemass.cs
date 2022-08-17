@@ -27,13 +27,10 @@ namespace EnhancedBosses.Bosses
         {
             if (character.m_nview.IsOwner())
             {
-                foreach (var player in Utils.FindPlayers(character.transform.position, 10f))
+                foreach (var player in Helpers.FindPlayers(character.transform.position, 10f))
                 {
-                    if (Main.BonemassTripEffect.Value)
-                    {
-                        SE_Trip statusEffect1 = ScriptableObject.CreateInstance<SE_Trip>();
-                        player.GetSEMan().AddStatusEffect(statusEffect1, true);
-                    }    
+                    SE_Trip statusEffect1 = ScriptableObject.CreateInstance<SE_Trip>();
+                    player.GetSEMan().AddStatusEffect(statusEffect1, true);
 
                     SE_Slow statusEffect2 = ScriptableObject.CreateInstance<SE_Slow>();
                     player.GetSEMan().AddStatusEffect(statusEffect2, true);
@@ -63,26 +60,25 @@ namespace EnhancedBosses.Bosses
             var playersCount = ZNet.instance.GetNrOfPlayers();
             var min = Main.BonemassMinMinions.Value + (playersCount - 1) * Main.BonemassMinionsMultiplier.Value;
             var max = Main.BonemassMaxMinions.Value + (playersCount - 1) * Main.BonemassMinionsMultiplier.Value;
-            Utils.SpawnCreatures(character, BonemassCreatures, min, max);
+            Helpers.SpawnCreatures(character, BonemassCreatures, min, max);
         }
 
         public void AOEDebuffs()
         {
-            foreach (var player in Utils.FindPlayers(character.transform.position))
+            foreach (var player in Helpers.FindPlayers(character.transform.position))
             {
                 player.UnequipItem(player.m_leftItem);
                 player.UnequipItem(player.m_rightItem);
             }
         }
 
-        public static GameObject BonemassSummon()
+        public static void BonemassSummon()
         {
             GameObject gameObject = PrefabManager.Instance.CreateClonedPrefab("bonemass_attack_summon", "bonemass_attack_aoe");
             gameObject.name = "bonemass_attack_summon";
-            ItemDrop.ItemData.SharedData shared = gameObject.GetComponent<ItemDrop>().m_itemData.m_shared;
-            shared.m_aiAttackInterval = Main.BonemassSummonCooldown.Value;
-            shared.m_name = "bonemass_attack_summon";
-            return gameObject;
+            ItemDrop item = gameObject.GetComponent<ItemDrop>();
+            item.m_itemData.m_shared.m_name = "bonemass_attack_summon";
+            PrefabManager.Instance.AddPrefab(gameObject);
         }
     }
 }

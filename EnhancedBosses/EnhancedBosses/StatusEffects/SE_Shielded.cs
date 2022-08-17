@@ -28,7 +28,7 @@ namespace EnhancedBosses.StatusEffects
 					float totalDamage = hit.GetTotalDamage();
 					hpValue -= totalDamage;
 					hit.ApplyModifier(0f);
-					Utils.PlayEffect("fx_GoblinShieldHit", m_character.GetCenterPoint());
+					Helpers.PlayEffect("fx_GoblinShieldHit", m_character.GetCenterPoint());
 
 					if (hpValue < 0)
 					{
@@ -86,7 +86,7 @@ namespace EnhancedBosses.StatusEffects
 				component.Destroy();
 				shieldFX = null;
 				_transform = null;
-				Utils.PlayEffect("fx_GoblinShieldBreak", m_character.GetCenterPoint());
+				Helpers.PlayEffect("fx_GoblinShieldBreak", m_character.GetCenterPoint());
             }
 		}
 	}
