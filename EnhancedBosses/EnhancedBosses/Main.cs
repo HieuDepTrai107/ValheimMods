@@ -11,7 +11,6 @@ using BepInEx.Bootstrap;
 using System.IO;
 using System.Reflection;
 using Jotunn.Utils;
-using Log = Jotunn.Logger;
 
 namespace EnhancedBosses
 {
@@ -301,7 +300,6 @@ namespace EnhancedBosses
 			GameObject prefab = PrefabManager.Instance.GetPrefab("GoblinKing");
 			prefab.AddComponent<Yagluth>();
 		}
-
 
 		public void SetupBosses()
 		{

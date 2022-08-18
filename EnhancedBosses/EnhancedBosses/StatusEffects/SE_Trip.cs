@@ -62,14 +62,6 @@ namespace EnhancedBosses.StatusEffects
             base.Setup(character);
         }
 
-        /*
-        public override bool IsDone()
-        {
-            if (GetRemaningTime() < 0)Log.LogWarning("SE_Trip OnDestroy");
-            return base.IsDone();
-        }
-        */
-
         public override void UpdateStatusEffect(float dt)
         {
             rainbowtimer += Time.deltaTime;
@@ -86,6 +78,11 @@ namespace EnhancedBosses.StatusEffects
             Helpers.Lerp(ref component.m_ColorGrading.model.m_Settings.basic.saturation, NewColorGradingSaturation, DeltaColorGradingSaturation);
 
             base.UpdateStatusEffect(dt);
+        }
+
+        public override bool CanAdd(Character character)
+        {
+            return Main.BonemassTripEffect.Value;
         }
     }
 }
