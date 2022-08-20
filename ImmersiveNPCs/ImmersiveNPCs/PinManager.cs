@@ -12,10 +12,9 @@ namespace ImmersiveNPCs
 
 		public static Minimap.PinData AddFriendlyPin(Vector3 pos)
 		{
-			GameObject gameObject = Object.Instantiate(Minimap.instance.m_pinPrefab);
 			Minimap.PinData pinData = new Minimap.PinData()
 			{
-				m_iconElement = gameObject.GetComponent<Image>(),
+				m_iconElement = Minimap.instance.m_pinPrefab.GetComponent<Image>(),
 				m_type = FriendlyPinType,
 				m_icon = FriendlyPinSprite,
 				m_name = "",
@@ -41,10 +40,7 @@ namespace ImmersiveNPCs
 				Friendly friendly = Main.friendlies[i];
 				if (friendly.character != null)
 				{
-					if (friendly.IsPositionChanges())
-					{
-						friendly.Move();
-					}
+					friendly.UpdatePinPosition();
 				}
 				else
 				{
@@ -58,7 +54,7 @@ namespace ImmersiveNPCs
 		{
 			Main.friendlies.Clear();
 
-			var pins = Minimap.instance.m_pins.Where(x => x.m_type == FriendlyPinType).ToArray();
+			var pins = GetFriendlyPins().ToArray();
 			for (int i = pins.Count() - 1; i >= 0; i--)
 			{
 				Minimap.instance.RemovePin(pins[i]);

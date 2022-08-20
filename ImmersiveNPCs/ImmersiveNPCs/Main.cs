@@ -24,6 +24,7 @@ namespace ImmersiveNPCs
         public static ConfigEntry<int> maxWeightT4;
         public static ConfigEntry<int> maxWeightT5;
         public static ConfigEntry<int> maxWeightT6;
+        public static ConfigEntry<string> friendlyPrefixes;
 
         public static List<Friendly> friendlies = new();
 
@@ -51,6 +52,7 @@ namespace ImmersiveNPCs
             maxWeightT4 = Config.Bind("NPC", "Max weight Т4", 200);
             maxWeightT5 = Config.Bind("NPC", "Max weight Т5", 300);
             maxWeightT6 = Config.Bind("NPC", "Max weight Т6", 500);
+            friendlyPrefixes = Config.Bind("NPC", "Prefixes", "Friendly, friendly");
         }
     }
 }

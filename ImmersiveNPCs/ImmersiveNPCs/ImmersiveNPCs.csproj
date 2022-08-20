@@ -80,12 +80,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
+    <Compile Include="Patches\Character_Awake_Patch.cs" />
     <Compile Include="Patches\Farming.cs" />
     <Compile Include="Friendly.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="Patches\HoverText.cs" />
+    <Compile Include="Patches\Humanoid_GiveDefaultItems_Patch.cs" />
     <Compile Include="Patches\MinimapPatch.cs" />
     <Compile Include="Patches\Patches.cs" />
+    <Compile Include="Patches\Tameable_Interact_Patch.cs" />
     <Compile Include="PinManager.cs" />
     <Compile Include="Properties\IgnoreAccessModifiers.cs" />
     <Compile Include="Main.cs" />

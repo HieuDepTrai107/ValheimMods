@@ -2,52 +2,38 @@
 using UnityEngine;
 using Jotunn.Managers;
 using System.Text.RegularExpressions;
+using System.Linq;
 using Random = UnityEngine.Random;
-using Log = Jotunn.Logger;
 
 namespace ImmersiveNPCs
 {
-	public class Helpers
+	public static class Helpers
     {
-		public static bool CheckKeyDown(string value)
-		{
-			foreach (var str in value.Split(','))
-				if (Input.GetKeyDown(str.ToLower()))
-					return true;
-
-			return false;
-		}
-
-		public static bool IsFriendly(Tameable tameable)
+		public static bool IsFriendly(this Tameable tameable)
 		{
 			var name = tameable.name.ToLower();
-			return name.Contains("friendly");
+			return Main.friendlyPrefixes.Value.Split(',').ToList().Any(e => name.Contains(e.Trim().ToLower()));
 		}
 
-		public static bool IsFriendly(Humanoid humanoid)
+		public static bool IsFriendly(this Humanoid humanoid)
 		{
-			var name = humanoid.name.ToLower();
-			return name.Contains("friendly");
+			string name = humanoid.name.ToLower();
+			return Main.friendlyPrefixes.Value.Split(',').ToList().Any(e => name.Contains(e.Trim().ToLower()));
 		}
 
-		public static bool IsFriendly(Character character)
+		public static bool IsFriendly(this Character character)
 		{
-			var name = character.name.ToLower();
-			return name.Contains("friendly");
+			string name = character.name.ToLower();
+			return Main.friendlyPrefixes.Value.Split(',').ToList().Any(e => name.Contains(e.Trim().ToLower()));
 		}
 
-		public static bool IsFriendly(BaseAI baseAI)
+		public static bool IsFriendly(this BaseAI baseAI)
 		{
-			var name = baseAI.name.ToLower();
-			return name.Contains("friendly");
+			string name = baseAI.name.ToLower();
+			return Main.friendlyPrefixes.Value.Split(',').ToList().Any(e => name.Contains(e.Trim().ToLower()));
 		}
 
-		public static bool IsBandit(Character character)
-		{
-			return character.name.ToLower().Contains("bandit");
-		}
-
-		public static bool IsNPC(Character character)
+		public static bool IsNPC(this Character character)
 		{
 			return character != null ? character.name.Contains("RRRN") : false;
 		}
@@ -127,7 +113,7 @@ namespace ImmersiveNPCs
 			}
 		}
 
-		public static float GetArmor(Character character)
+		public static float GetArmor(this Character character)
 		{
 			var humanoid = character.GetComponent<Humanoid>();
 			var equipedItems = humanoid.m_inventory.GetEquipedtems();

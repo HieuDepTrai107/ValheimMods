@@ -52,4 +52,3 @@ D:\Valheim\Nexusmods\ImmersiveNPCs\ImmersiveNPCs\obj\Debug\ImmersiveNPCs.csproj.
 D:\Valheim\Nexusmods\ImmersiveNPCs\ImmersiveNPCs\obj\Debug\ImmersiveNPCs.csproj.CopyComplete
 D:\Valheim\Nexusmods\ImmersiveNPCs\ImmersiveNPCs\obj\Debug\ImmersiveNPCs.dll
 D:\Valheim\Nexusmods\ImmersiveNPCs\ImmersiveNPCs\obj\Debug\ImmersiveNPCs.pdb
-D:\Valheim\Nexusmods\ImmersiveNPCs\ImmersiveNPCs\obj\Debug\ImmersiveNPCs.csproj.AssemblyReference.cache

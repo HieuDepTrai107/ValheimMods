@@ -25,6 +25,7 @@ namespace ImmersiveNPCs
 			pin = PinManager.AddFriendlyPin(position);
 			Main.friendlies.Add(this);
 		}
+
 		public void OnDeath()
 		{
 			if (pin != null)
@@ -33,20 +34,12 @@ namespace ImmersiveNPCs
 			}
 		}
 
-		public bool IsPositionChanges()
-		{
-			return character.transform.position != position;
-		}
-
-		public void Move()
+		public void UpdatePinPosition()
 		{
 			if (pin != null)
 			{
-				Minimap.instance.RemovePin(pin);
+				pin.m_pos = character.transform.position;
 			}
-
-			pin = PinManager.AddFriendlyPin(position);
-			position = character.transform.position;
 		}
 
 		/*

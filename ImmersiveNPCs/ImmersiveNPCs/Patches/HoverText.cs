@@ -9,10 +9,10 @@ namespace ImmersiveNPCs.Patches
 		{
 			public static void Postfix(Tameable __instance, ref string __result)
 			{
-				if (Helpers.IsFriendly(__instance))
+				if (__instance.IsFriendly())
 				{
 					Friendly friendly = __instance.gameObject.GetComponent<Friendly>();
-					__result = friendly.GetHoverText();		
+					__result = friendly.GetHoverText();
 				}
 			}
 		}
