@@ -117,6 +117,157 @@
                 Internal flag if this button config is backed by any BepInEx ConfigEntry
             </summary>
         </member>
+        <member name="T:Jotunn.Configs.ClutterConfig">
+            <summary>
+                Configuration class for adding custom clutter.<br />
+                Use this in a constructor of <see cref="T:Jotunn.Entities.CustomClutter"/>
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.Enabled">
+            <summary>
+                Whether this clutter gets spawned in the world. Defaults to <c>true</c>.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.Biome">
+            <summary>
+                Biome to spawn in, multiple Biomes can be allowed with <see cref="M:Jotunn.Managers.ZoneManager.AnyBiomeOf(Heightmap.Biome[])"/>.<br />
+                Default to all biomes.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.Instanced">
+            <summary>
+                Whether this clutter has an <see cref="T:InstanceRenderer"/> attached that should be used.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.Amount">
+            <summary>
+                The amount of displayed clutter prefabs per patch.
+                For high values an <see cref="T:InstanceRenderer"/> should be used to lower the amount of overall prefabs.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.OnUncleared">
+            <summary>
+                Whether this clutter should be shown on unmodified ground.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.OnCleared">
+            <summary>
+                Whether this clutter should be shown on modified ground.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.ScaleMin">
+            <summary>
+                Minimum random size of the prefab, only active when <see cref="P:Jotunn.Configs.ClutterConfig.Instanced"/> is used.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.ScaleMax">
+            <summary>
+                Maximum random size of the prefab, only active when <see cref="P:Jotunn.Configs.ClutterConfig.Instanced"/> is used.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.MaxTilt">
+            <summary>
+                Maximum terrain tilt in degrees this clutter will be placed on.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.MinAltitude">
+            <summary>
+                Minimum terrain height this clutter will be placed on.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.MaxAltitude">
+            <summary>
+                Maximum terrain height this clutter will be placed on.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.SnapToWater">
+            <summary>
+                Whether the y position will always be at water level.
+                Used before <see cref="P:Jotunn.Configs.ClutterConfig.RandomOffset"/>
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.RandomOffset">
+            <summary>
+                Random y offset of every individual prefab.
+                Calculated after <see cref="P:Jotunn.Configs.ClutterConfig.SnapToWater"/>.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.TerrainTilt">
+            <summary>
+                Whether this clutter will be rotated with the underlying terrain.
+                Otherwise it will always point straight up.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.OceanDepthCheck">
+            <summary>
+                Whether the clutter should check for ocean height.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.MinOceanDepth">
+            <summary>
+                Minimum ocean depth that is needed to place this clutter.
+                Needs <see cref="P:Jotunn.Configs.ClutterConfig.OceanDepthCheck"/> to be <c>true</c>.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.MaxOceanDepth">
+            <summary>
+                Maximum ocean depth to place this clutter.
+                Needs <see cref="P:Jotunn.Configs.ClutterConfig.OceanDepthCheck"/> to be <c>true</c>.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.InForest">
+            <summary>
+                Whether the clutter should check for forest thresholds.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.ForestThresholdMin">
+            <summary>
+                Minimum value of the forest fractal:<br/>
+                    0 - 1: inside the forest<br/>
+                    1: forest edge<br/>
+                    1 - infinity: outside the forest
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.ForestThresholdMax">
+            <summary>
+                Maximum value of the forest fractal:<br/>
+                    0 - 1: inside the forest<br/>
+                    1: forest edge<br/>
+                    1 - infinity: outside the forest
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.FractalScale">
+            <summary>
+                Size of a noise map used to determine if the clutter should be placed.
+                Set to 0 to disable and place it everywhere.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.FractalOffset">
+            <summary>
+                Offset of the noise map.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.FractalThresholdMin">
+            <summary>
+                Minimum value of the noise map that is needed to place the clutter.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Configs.ClutterConfig.FractalThresholdMax">
+            <summary>
+                Maximum value of the noise map to place the clutter.
+            </summary>
+        </member>
+        <member name="M:Jotunn.Configs.ClutterConfig.#ctor">
+            <summary>
+                Create a new <see cref="T:Jotunn.Configs.ClutterConfig"/>
+            </summary>
+        </member>
+        <member name="M:Jotunn.Configs.ClutterConfig.#ctor(ClutterSystem.Clutter)">
+            <summary>
+                Create a copy of the <see cref="T:ClutterSystem.Clutter"/>
+            </summary>
+            <param name="clutter"></param>
+        </member>
         <member name="T:Jotunn.Configs.ConversionConfig">
             <summary>
                 Base class for adding new ItemConversions to various Valheim stations
@@ -1579,6 +1730,55 @@
             <returns>List of valid command options</returns>
         </member>
         <member name="M:Jotunn.Entities.ConsoleCommand.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:Jotunn.Entities.CustomClutter">
+            <summary>
+                Main interface for adding custom clutter to the game.<br />
+                Clutter are client side only objects scattered on the ground.<br />
+                All custom clutter have to be wrapped inside this class to add it to Jötunns <see cref="T:Jotunn.Managers.ZoneManager"/>.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Entities.CustomClutter.Prefab">
+            <summary>
+                The prefab for this custom clutter.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Entities.CustomClutter.Clutter">
+            <summary>
+                Associated <see cref="T:ClutterSystem.Clutter"/> class.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Entities.CustomClutter.Name">
+            <summary>
+                Name of this custom clutter.
+            </summary>
+        </member>
+        <member name="P:Jotunn.Entities.CustomClutter.FixReference">
+            <summary>
+                Indicator if references from <see cref="T:Jotunn.Entities.Mock`1"/>s will be replaced at runtime.
+            </summary>
+        </member>
+        <member name="M:Jotunn.Entities.CustomClutter.#ctor(UnityEngine.GameObject,System.Boolean,Jotunn.Configs.ClutterConfig)">
+            <summary>
+                Custom clutter from a prefab.<br />
+                Can fix references for mocks.
+            </summary>
+            <param name="prefab">The prefab for this custom clutter.</param>
+            <param name="fixReference">If true references for <see cref="T:Jotunn.Entities.Mock`1"/> objects get resolved at runtime by Jötunn.</param>
+            <param name="config">The <see cref="T:Jotunn.Configs.ClutterConfig"/> for this custom vegation.</param>
+        </member>
+        <member name="M:Jotunn.Entities.CustomClutter.#ctor(UnityEngine.AssetBundle,System.String,System.Boolean,Jotunn.Configs.ClutterConfig)">
+            <summary>
+                Custom clutter from a prefab loaded from an <see cref="T:UnityEngine.AssetBundle"/>.<br />
+                Can fix references for mocks.
+            </summary>
+            <param name="assetBundle">A preloaded <see cref="T:UnityEngine.AssetBundle"/></param>
+            <param name="assetName">Name of the prefab in the bundle.</param>
+            <param name="fixReference">If true references for <see cref="T:Jotunn.Entities.Mock`1"/> objects get resolved at runtime by Jötunn.</param>
+            <param name="config">The <see cref="T:Jotunn.Configs.ClutterConfig"/> for this custom clutter.</param>
+        </member>
+        <member name="M:Jotunn.Entities.CustomClutter.ToString">
             <inheritdoc/>
         </member>
         <member name="T:Jotunn.Entities.CustomCreature">
@@ -4997,12 +5197,12 @@
                 If you want to execute just once you will need to unregister from the event after execution.
             </summary>
         </member>
-        <member name="F:Jotunn.Managers.PrefabManager.PrefabContainer">
+        <member name="P:Jotunn.Managers.PrefabManager.PrefabContainer">
             <summary>
                 Container for custom prefabs in the DontDestroyOnLoad scene.
             </summary>
         </member>
-        <member name="F:Jotunn.Managers.PrefabManager.Prefabs">
+        <member name="P:Jotunn.Managers.PrefabManager.Prefabs">
             <summary>
                 Dictionary of all added custom prefabs by name hash.
             </summary>
@@ -5288,11 +5488,6 @@
                 Create a new RenderRequest
             </summary>
             <param name="target">Object to be rendered. A copy of the provided GameObject will be created for rendering</param> 
-        </member>
-        <member name="M:Jotunn.Managers.SaveManager.#ctor">
-            <summary>
-                Hide .ctor
-            </summary>
         </member>
         <member name="T:Jotunn.Managers.SkillManager">
             <summary>
@@ -5713,6 +5908,13 @@
                 If you want to execute just once you will need to unregister from the event after execution.
             </summary>
         </member>
+        <member name="E:Jotunn.Managers.ZoneManager.OnVanillaClutterAvailable">
+            <summary>
+                Event that gets fired after the vanilla clutter is in memory and available obtain.
+                Your code will execute every time before a new <see cref="T:ClutterSystem"/> is instantiated.
+                If you want to execute just once you will need to unregister from the event after execution.
+            </summary>
+        </member>
         <member name="F:Jotunn.Managers.ZoneManager.LocationContainer">
             <summary>
                 Container for custom locations in the DontDestroyOnLoad scene.
@@ -5813,9 +6015,33 @@
             <param name="name">Name of the ZoneVegetation to search for.</param>
             <returns>The existing ZoneVegetation, or null if none exists with given name</returns>
         </member>
+        <member name="M:Jotunn.Managers.ZoneManager.AddCustomClutter(Jotunn.Entities.CustomClutter)">
+            <summary>
+                Register a CustomClutter to be added to the ClutterSystem
+            </summary>
+            <param name="customClutter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jotunn.Managers.ZoneManager.GetClutter(System.String)">
+            <summary>
+                Get a Clutter by its name.<br /><br />
+                Search hierarchy:
+                <list type="number">
+                    <item>Custom Clutter with the exact name</item>
+                    <item>Vanilla Clutter with the exact name from <see cref="T:ClutterSystem"/></item>
+                </list>
+            </summary>
+            <param name="name">Name of the Clutter to search for.</param>
+            <returns>The existing Clutter, or null if none exists with given name</returns>
+        </member>
         <member name="M:Jotunn.Managers.ZoneManager.InvokeOnVanillaLocationsAvailable">
             <summary>
                 Safely invoke OnVanillaLocationsAvailable
+            </summary>
+        </member>
+        <member name="M:Jotunn.Managers.ZoneManager.InvokeOnVanillaClutterAvailable">
+            <summary>
+                Safely invoke OnVanillaClutterAvailable
             </summary>
         </member>
         <member name="T:Jotunn.GUI.ColorPicker">
@@ -6680,7 +6906,7 @@
             <param name="sender"></param>
             <param name="data"></param>
         </member>
-        <member name="M:Jotunn.Utils.ModCompatibility.ShowModCompatibilityErrorMessage">
+        <member name="M:Jotunn.Utils.ModCompatibility.ShowModCompatibilityErrorMessage(System.String)">
             <summary>
                 Create and show mod compatibility error message
             </summary>
@@ -7010,6 +7236,13 @@
             <param name="modGuid">GUID of the mod</param>
             <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Jotunn.Entities.CustomVegetation"/> from a specific mod</returns>
         </member>
+        <member name="M:Jotunn.Utils.ModRegistry.GetClutter(System.String)">
+            <summary>
+                Get all added <see cref="T:Jotunn.Entities.CustomClutter">CustomClutter</see> of a mod by GUID
+            </summary>
+            <param name="modGuid">GUID of the mod</param>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Jotunn.Entities.CustomClutter"/> from a specific mod</returns>
+        </member>
         <member name="M:Jotunn.Utils.ModRegistry.GetCreatures">
             <summary>
                 Get all added <see cref="T:Jotunn.Entities.CustomCreature">CustomCreatures</see>
@@ -7112,6 +7345,11 @@
         <member name="P:Jotunn.Utils.ModRegistry.ModInfo.Vegetation">
             <summary>
                 Custom Vegetation added by that mod
+            </summary>
+        </member>
+        <member name="P:Jotunn.Utils.ModRegistry.ModInfo.Clutter">
+            <summary>
+                Custom Clutter added by that mod
             </summary>
         </member>
         <member name="P:Jotunn.Utils.ModRegistry.ModInfo.Creatures">
