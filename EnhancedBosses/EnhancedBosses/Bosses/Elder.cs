@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using EnhancedBosses.StatusEffects;
 using System.Linq;
+using Log = Jotunn.Logger;
 
 namespace EnhancedBosses.Bosses
 {

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\JotunnLib.2.7.7\build\JotunnLib.props" Condition="Exists('..\packages\JotunnLib.2.7.7\build\JotunnLib.props')" />
+  <Import Project="..\packages\JotunnLib.2.10.0\build\JotunnLib.props" Condition="Exists('..\packages\JotunnLib.2.10.0\build\JotunnLib.props')" />
   <Import Project="GameDir.targets" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -43,11 +43,11 @@
   <PropertyGroup>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony, Version=2.10.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\HarmonyX.2.10.0\lib\net45\0Harmony.dll</HintPath>
+    <Reference Include="0Harmony, Version=2.10.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HarmonyX.2.10.1\lib\net45\0Harmony.dll</HintPath>
     </Reference>
-    <Reference Include="Jotunn, Version=2.7.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\JotunnLib.2.7.7\lib\net462\Jotunn.dll</HintPath>
+    <Reference Include="Jotunn, Version=2.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\JotunnLib.2.10.0\lib\net462\Jotunn.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil, Version=0.11.4.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
       <HintPath>..\packages\Mono.Cecil.0.11.4\lib\net40\Mono.Cecil.dll</HintPath>
@@ -71,7 +71,7 @@
       <HintPath>..\packages\MonoMod.Utils.22.5.1.1\lib\net452\MonoMod.Utils.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.2-beta1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -126,6 +126,6 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\JotunnLib.2.7.7\build\JotunnLib.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\JotunnLib.2.7.7\build\JotunnLib.props'))" />
+    <Error Condition="!Exists('..\packages\JotunnLib.2.10.0\build\JotunnLib.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\JotunnLib.2.10.0\build\JotunnLib.props'))" />
   </Target>
 </Project>

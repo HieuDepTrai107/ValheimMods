@@ -9,6 +9,7 @@ namespace EnhancedBosses
 {
     class Patches
     {
+        /*
         [HarmonyPatch(typeof(EnemyHud), nameof(EnemyHud.TestShow))]
         public static class EnemyHud_TestShow_Postfix
         {
@@ -20,6 +21,7 @@ namespace EnhancedBosses
                 }
             }
         }
+        */
 
         [HarmonyPatch(typeof(Minimap), nameof(Minimap.UpdateEventPin))]
         public static class UpdateEventMobMinimapPinsPatch
@@ -33,11 +35,11 @@ namespace EnhancedBosses
         [HarmonyPatch(typeof(BaseAI), nameof(BaseAI.CanUseAttack))]
         public static class BaseAI_CanUseAttack
         {
-            public static void Postfix(BaseAI __instance, Character character, ItemDrop.ItemData item, ref bool __result)
+            public static void Postfix(BaseAI __instance, ItemDrop.ItemData item, ref bool __result)
             {
-                if (character.name.Contains("Eikthyr"))
+                if (__instance.name.Contains("Eikthyr"))
                 {
-                    Eikthyr eikthyr = character.gameObject.GetComponent<Eikthyr>();
+                    Eikthyr eikthyr = __instance.gameObject.GetComponent<Eikthyr>();
                     if (item.m_shared.m_name == "Eikthyr_summon")
                     {
                         if (eikthyr.GetMinionsCount() > eikthyr.GetMaxMinions())
@@ -46,9 +48,9 @@ namespace EnhancedBosses
                         }
                     }
                 }
-                else if (character.name.Contains("gd_king"))
+                else if (__instance.name.Contains("gd_king"))
                 {
-                    Elder elder = character.gameObject.GetComponent<Elder>();
+                    Elder elder = __instance.gameObject.GetComponent<Elder>();
                     if (item.m_shared.m_name == "gd_king_summon")
                     {
                         if (elder.GetMinionsCount() > elder.GetMaxMinions())

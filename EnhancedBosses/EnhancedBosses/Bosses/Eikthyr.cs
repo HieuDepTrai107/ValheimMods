@@ -29,9 +29,10 @@ namespace EnhancedBosses.Bosses
             zNetView = base.GetComponent<ZNetView>();
             monsterAI = base.GetComponent<MonsterAI>();
             humanoid = base.GetComponent<Humanoid>();
-            zNetView.GetZDO().Set("specialAbility", true);
+            // zNetView.GetZDO().Set("specialAbility", true);
         }
 
+        /*
         public void Update()
         {
             if (character.GetHealthPercentage() < 0.5f)
@@ -43,6 +44,7 @@ namespace EnhancedBosses.Bosses
                 }
             }
         }
+        */
 
         public bool Process_Attack(Attack attack)
         {
@@ -64,7 +66,7 @@ namespace EnhancedBosses.Bosses
             {
                 if (weapon.m_shared.m_name == "Eikthyr_clones")
                 {
-                    SpawnClones();
+                    // SpawnClones();
                     return false;
                 }
                 else if (weapon.m_dropPrefab == Main.EikthyrAntler)

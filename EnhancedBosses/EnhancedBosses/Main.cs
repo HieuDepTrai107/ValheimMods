@@ -240,7 +240,7 @@ namespace EnhancedBosses
 
 			Eikthyr.EikthyrGroundSlam();
 			Eikthyr.EikthyrSummon();
-			Eikthyr.EikthyrClones();
+			// Eikthyr.EikthyrClones();
 			Eikthyr.EikthyrVortex();
 
 			GameObject prefab = PrefabManager.Instance.GetPrefab("Eikthyr");
