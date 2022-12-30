@@ -26,4 +26,3 @@ D:\C#\Valheim\Моды\TradingSkill\TradingSkill\bin\Debug\MonoMod.Utils.xml
 D:\C#\Valheim\Моды\TradingSkill\TradingSkill\obj\Debug\TradingSkill.csproj.CopyComplete
 D:\C#\Valheim\Моды\TradingSkill\TradingSkill\obj\Debug\TradingSkill.dll
 D:\C#\Valheim\Моды\TradingSkill\TradingSkill\obj\Debug\TradingSkill.pdb
-D:\C#\Valheim\Моды\TradingSkill\TradingSkill\obj\Debug\TradingSkill.csproj.AssemblyReference.cache

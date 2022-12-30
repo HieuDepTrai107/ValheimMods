@@ -39,19 +39,79 @@ namespace TradingSkill
 			}
 		}
 
+		[HarmonyPatch(typeof(StoreGui), nameof(StoreGui.Show))]
+		public static class StoreGui_Show_Postfix
+		{
+			public static void Postfix(StoreGui __instance, Trader trader)
+			{
+				__instance.m_rootPanel.transform.parent.Find("SellingPanel").gameObject.SetActive(true);
+			}
+		}
+
+		[HarmonyPatch(typeof(StoreGui), nameof(StoreGui.Hide))]
+		public static class StoreGui_Hide_Postfix
+		{
+			public static void Postfix(StoreGui __instance)
+			{
+				__instance.m_rootPanel.transform.parent.Find("SellingPanel").gameObject.SetActive(false);
+			}
+		}
+
 		[HarmonyPatch(typeof(StoreGui), nameof(StoreGui.FillList))]
         public static class StoreGui_FillList_Prefix
         {
             public static bool Prefix(StoreGui __instance)
             {
 				FillBuyableList(__instance);
-				SellingPanel.FillSellableList(__instance);
+				FillSellableList(__instance);
 
 				return false;
 			}
         }
 
+		public static void FillSellableList(StoreGui __instance)
+		{
+			Log.LogWarning("FillSellableList");
+			int playerCoins = __instance.GetPlayerCoins();
+			int num = __instance.GetSelectedItemIndex();
 
+			// float num2 = Buying.Count * __instance.m_itemSpacing;
+			RectTransform rectTransform = __instance.m_rootPanel.transform.parent.Find("SellingPanel").Find("SellingItemListRoot") as RectTransform;
+			// rectTransform.SetSizeWithCurrentAnchors(Axis.Vertical, num2);
+
+
+			for (int i = 0; i < __instance.m_trader.m_items.Count; i++)
+			{
+				ItemDrop.ItemData item = __instance.m_trader.m_items[i].m_prefab.GetComponent<ItemDrop>().m_itemData;
+
+				GameObject element = Object.Instantiate(__instance.m_listElement, rectTransform);
+				element.SetActive(true);
+
+				RectTransform transform = element.transform as RectTransform;
+				transform.anchoredPosition = new Vector2(0f, i * (0f - __instance.m_itemSpacing));
+
+				Image component = element.transform.Find("icon").GetComponent<Image>();
+				component.sprite = item.m_shared.m_icons[0];
+				component.color = Color.white;
+
+				string text = Localization.instance.Localize(item.m_shared.m_name);
+				if (item.m_stack > 1)
+				{
+					text = text + " x" + item.m_stack;
+				}
+
+				Text component2 = element.transform.Find("name").GetComponent<Text>();
+				component2.text = text;
+				component2.color = Color.white;
+
+				UITooltip component3 = element.GetComponent<UITooltip>();
+				component3.m_topic = item.m_shared.m_name;
+				component3.m_text = item.GetTooltip();
+
+				Text component4 = Utils.FindChild(element.transform, "price").GetComponent<Text>();
+				component4.text = TradingSkill.GetNewPrice(100).ToString();
+			}
+		}
 		public static void FillBuyableList(StoreGui __instance)
         {
 			int playerCoins = __instance.GetPlayerCoins();
