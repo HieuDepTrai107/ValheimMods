@@ -11,6 +11,7 @@ using BepInEx.Bootstrap;
 using System.IO;
 using System.Reflection;
 using Jotunn.Utils;
+using Log = Jotunn.Logger;
 
 namespace EnhancedBosses
 {
@@ -220,9 +221,12 @@ namespace EnhancedBosses
 					if (itemInfo.Enabled)
 					{
 						GameObject gameObject = PrefabManager.Instance.GetPrefab(itemName);
-						ItemDrop item = gameObject.GetComponent<ItemDrop>();
-						item.m_itemData.m_shared.m_aiAttackInterval = itemInfo.Cooldown;
-						list.Add(gameObject);
+						if (gameObject != null)
+                        {
+							ItemDrop item = gameObject.GetComponent<ItemDrop>();
+							item.m_itemData.m_shared.m_aiAttackInterval = itemInfo.Cooldown;
+							list.Add(gameObject);
+                        }
 					}
 				};
 
