@@ -180,7 +180,6 @@ namespace ImmersiveNPCs
 				if (Helpers.isBow(item))
 				{
 					item.m_shared.m_aiAttackRange = 10f;
-					item.m_shared.m_holdDurationMin = 0f;
 				}
 			}
 
@@ -193,7 +192,6 @@ namespace ImmersiveNPCs
 					if (Helpers.isBow(item))
 					{
 						item.m_shared.m_aiAttackRange = 10f;
-						item.m_shared.m_holdDurationMin = 0f;
 					}
 				}
 
@@ -205,7 +203,6 @@ namespace ImmersiveNPCs
 					if (Helpers.isBow(item))
 					{
 						item.m_shared.m_aiAttackRange = 10f;
-						item.m_shared.m_holdDurationMin = 0f;
 					}
 				}
 
