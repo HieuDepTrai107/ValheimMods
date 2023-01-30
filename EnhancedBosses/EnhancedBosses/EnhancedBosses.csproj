@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\JotunnLib.2.10.0\build\JotunnLib.props" Condition="Exists('..\packages\JotunnLib.2.10.0\build\JotunnLib.props')" />
+  <Import Project="..\packages\JotunnLib.2.10.3\build\JotunnLib.props" Condition="Exists('..\packages\JotunnLib.2.10.3\build\JotunnLib.props')" />
   <Import Project="GameDir.targets" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -46,8 +46,8 @@
     <Reference Include="0Harmony, Version=2.10.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\HarmonyX.2.10.1\lib\net45\0Harmony.dll</HintPath>
     </Reference>
-    <Reference Include="Jotunn, Version=2.10.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\JotunnLib.2.10.0\lib\net462\Jotunn.dll</HintPath>
+    <Reference Include="Jotunn, Version=2.10.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\JotunnLib.2.10.3\lib\net462\Jotunn.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil, Version=0.11.4.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
       <HintPath>..\packages\Mono.Cecil.0.11.4\lib\net40\Mono.Cecil.dll</HintPath>
@@ -61,14 +61,14 @@
     <Reference Include="Mono.Cecil.Rocks, Version=0.11.4.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
       <HintPath>..\packages\Mono.Cecil.0.11.4\lib\net40\Mono.Cecil.Rocks.dll</HintPath>
     </Reference>
-    <Reference Include="MonoMod, Version=22.5.1.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MonoMod.22.5.1.1\lib\net452\MonoMod.exe</HintPath>
+    <Reference Include="MonoMod, Version=22.7.31.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MonoMod.22.7.31.1\lib\net452\MonoMod.exe</HintPath>
     </Reference>
-    <Reference Include="MonoMod.RuntimeDetour, Version=22.5.1.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MonoMod.RuntimeDetour.22.5.1.1\lib\net452\MonoMod.RuntimeDetour.dll</HintPath>
+    <Reference Include="MonoMod.RuntimeDetour, Version=22.7.31.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MonoMod.RuntimeDetour.22.7.31.1\lib\net452\MonoMod.RuntimeDetour.dll</HintPath>
     </Reference>
-    <Reference Include="MonoMod.Utils, Version=22.5.1.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MonoMod.Utils.22.5.1.1\lib\net452\MonoMod.Utils.dll</HintPath>
+    <Reference Include="MonoMod.Utils, Version=22.7.31.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MonoMod.Utils.22.7.31.1\lib\net452\MonoMod.Utils.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -82,23 +82,68 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bosses\Bonemass.cs" />
-    <Compile Include="Bosses\Boss.cs" />
-    <Compile Include="Bosses\Eikthyr.cs" />
-    <Compile Include="Bosses\Elder.cs" />
-    <Compile Include="Bosses\Moder.cs" />
-    <Compile Include="Bosses\Yagluth.cs" />
-    <Compile Include="Patches.cs" />
-    <Compile Include="PinManager.cs" />
+    <Compile Include="Bosses\Bonemass\Bonemass.cs" />
+    <Compile Include="Bosses\Bonemass\BonemassAOE.cs" />
+    <Compile Include="Bosses\Bonemass\BonemassPunch.cs" />
+    <Compile Include="Bosses\Bonemass\BonemassSummon.cs" />
+    <Compile Include="Bosses\Bonemass\BonemassThrow.cs" />
+    <Compile Include="Bosses\Eikthyr\Eikthyr.cs" />
+    <Compile Include="Bosses\Eikthyr\EikthyrAntler.cs" />
+    <Compile Include="Bosses\Eikthyr\EikthyrCharge.cs" />
+    <Compile Include="Bosses\Eikthyr\EikthyrClones.cs" />
+    <Compile Include="Bosses\Eikthyr\EikthyrStomp.cs" />
+    <Compile Include="Bosses\Eikthyr\EikthyrStorm.cs" />
+    <Compile Include="Bosses\Eikthyr\EikthyrSummon.cs" />
+    <Compile Include="Bosses\Eikthyr\EikthyrVortex.cs" />
+    <Compile Include="Bosses\Eikthyr\Vortex.cs" />
+    <Compile Include="Bosses\Elder\Elder.cs" />
+    <Compile Include="Bosses\Elder\ElderDemolishTrees.cs" />
+    <Compile Include="Bosses\Elder\ElderEatTree.cs" />
+    <Compile Include="Bosses\Elder\ElderRootSpawn.cs" />
+    <Compile Include="Bosses\Elder\ElderScream.cs" />
+    <Compile Include="Bosses\Elder\ElderShield.cs" />
+    <Compile Include="Bosses\Elder\ElderShoot.cs" />
+    <Compile Include="Bosses\Elder\ElderStomp.cs" />
+    <Compile Include="Bosses\Elder\ElderSummon.cs" />
+    <Compile Include="Bosses\Elder\ElderTeleport.cs" />
+    <Compile Include="Bosses\Moder\Moder.cs" />
+    <Compile Include="Bosses\Moder\ModerBite.cs" />
+    <Compile Include="Bosses\Moder\ModerClawLeft.cs" />
+    <Compile Include="Bosses\Moder\ModerClawRight.cs" />
+    <Compile Include="Bosses\Moder\ModerColdbreath.cs" />
+    <Compile Include="Bosses\Moder\ModerSpitShotgun.cs" />
+    <Compile Include="Bosses\Moder\ModerSummon.cs" />
+    <Compile Include="Bosses\Moder\ModerTaunt.cs" />
+    <Compile Include="Bosses\Queen\Queen.cs" />
+    <Compile Include="Bosses\Queen\QueenBite.cs" />
+    <Compile Include="Bosses\Queen\QueenCall.cs" />
+    <Compile Include="Bosses\Queen\QueenPierceAOE.cs" />
+    <Compile Include="Bosses\Queen\QueenRush.cs" />
+    <Compile Include="Bosses\Queen\QueenSlap.cs" />
+    <Compile Include="Bosses\Queen\QueenSpit.cs" />
+    <Compile Include="Bosses\Queen\QueenTeleport.cs" />
+    <Compile Include="Bosses\Yagluth\Yagluth.cs" />
+    <Compile Include="Bosses\Yagluth\YagluthBeam.cs" />
+    <Compile Include="Bosses\Yagluth\YagluthMeteors.cs" />
+    <Compile Include="Bosses\Yagluth\YagluthNova.cs" />
+    <Compile Include="Bosses\Yagluth\YagluthSummon.cs" />
+    <Compile Include="Bosses\Yagluth\YagluthTaunt.cs" />
+    <Compile Include="StatusEffects\SE_BaseShield.cs" />
+    <Compile Include="StatusEffects\SE_CustomShield.cs" />
+    <Compile Include="StatusEffects\SE_Trip.cs" />
+    <Compile Include="Utility\Helpers.cs" />
+    <Compile Include="Patches\Attack_OnAttackTrigger.cs" />
+    <Compile Include="Patches\BaseAI_CanUseAttack.cs" />
+    <Compile Include="Patches\EnemyHud_TestShow.cs" />
+    <Compile Include="Patches\Minimap_UpdateEventPin.cs" />
+    <Compile Include="Scripts\Boss.cs" />
+    <Compile Include="Scripts\CustomAttack.cs" />
+    <Compile Include="Scripts\SummonAttack.cs" />
+    <Compile Include="Utility\PinManager.cs" />
     <Compile Include="Properties\IgnoreAccessModifiers.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scripts\Vortex.cs" />
-    <Compile Include="StatusEffects\SE_Electric.cs" />
     <Compile Include="StatusEffects\SE_Slow.cs" />
-    <Compile Include="StatusEffects\SE_Shielded.cs" />
-    <Compile Include="StatusEffects\SE_Trip.cs" />
-    <Compile Include="Helpers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -126,6 +171,6 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\JotunnLib.2.10.0\build\JotunnLib.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\JotunnLib.2.10.0\build\JotunnLib.props'))" />
+    <Error Condition="!Exists('..\packages\JotunnLib.2.10.3\build\JotunnLib.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\JotunnLib.2.10.3\build\JotunnLib.props'))" />
   </Target>
 </Project>

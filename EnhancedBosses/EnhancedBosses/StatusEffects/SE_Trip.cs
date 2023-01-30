@@ -1,6 +1,8 @@
 ﻿using Jotunn.Utils;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.PostProcessing;
+using Log = Jotunn.Logger;
 
 namespace EnhancedBosses.StatusEffects
 {
@@ -47,11 +49,10 @@ namespace EnhancedBosses.StatusEffects
 
         public SE_Trip()
         {
-            m_name = "Галлюцинации";
             name = "EB_Trip";
+            m_name = "Hallucinations";
             m_ttl = baseTTL;
             m_icon = AssetUtils.LoadSpriteFromFile("EnhancedBosses/Assets/trip.png");
-            m_flashIcon = true;
         }
 
         public override void Setup(Character character)
@@ -83,6 +84,53 @@ namespace EnhancedBosses.StatusEffects
         public override bool CanAdd(Character character)
         {
             return Main.BonemassTripEffect.Value;
+        }
+
+        public override void Stop()
+        {
+            if (Main.BonemassTripEffect.Value)
+            {
+                RemoveTripEffect();
+            }
+
+            base.Stop();
+        }
+
+        async public void RemoveTripEffect()
+        {          
+            var Ticks = 100;
+
+            var OldVignetteIntensity = 0.2f;
+            var OldChromaticAberrationIntensity = 20f;
+            var OldColorGradingSaturation = 2f;
+
+            var NewVignetteIntensity = 0.45f;
+            var NewChromaticAberrationIntensity = 0.15f;
+            var NewColorGradingSaturation = 1f;
+
+            var DeltaVignetteIntensity = Mathf.Abs(OldVignetteIntensity - NewVignetteIntensity) / Ticks;
+            var DeltaChromaticAberrationIntensity = Mathf.Abs(OldChromaticAberrationIntensity - NewChromaticAberrationIntensity) / Ticks;
+            var DeltaColorGradingSaturation = Mathf.Abs(OldColorGradingSaturation - NewColorGradingSaturation) / Ticks;
+
+            float ratio = NewVignetteIntensity / DeltaVignetteIntensity;
+            while (ratio != 1)
+            {
+                ratio = Helpers.Lerp(ref component.m_Vignette.model.m_Settings.intensity, NewVignetteIntensity, DeltaVignetteIntensity);
+                Helpers.Lerp(ref component.m_ChromaticAberration.model.m_Settings.intensity, NewChromaticAberrationIntensity, DeltaChromaticAberrationIntensity);
+                Helpers.Lerp(ref component.m_ColorGrading.model.m_Settings.basic.saturation, NewColorGradingSaturation, DeltaColorGradingSaturation);
+
+                component.m_Vignette.model.m_Settings.color.r *= 1 - ratio;
+                component.m_Vignette.model.m_Settings.color.g *= 1 - ratio;
+                component.m_Vignette.model.m_Settings.color.b *= 1 - ratio;
+
+                await Task.Delay(10);
+            }
+
+            if (ratio == 1)
+            {
+                component.m_Vignette.model.enabled = false;
+                component.m_ColorGrading.model.isDirty = false;
+            }
         }
     }
 }

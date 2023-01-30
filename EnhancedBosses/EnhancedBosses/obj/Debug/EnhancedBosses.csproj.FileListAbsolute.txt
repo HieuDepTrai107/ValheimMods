@@ -103,31 +103,32 @@ D:\Valheim\Nexusmods\EnhancedBosses\EnhancedBosses\obj\Debug\EnhancedBosses.cspr
 D:\Valheim\Nexusmods\EnhancedBosses\EnhancedBosses\bin\Debug\Newtonsoft.Json.dll
 D:\Valheim\Nexusmods\EnhancedBosses\EnhancedBosses\bin\Debug\Newtonsoft.Json.xml
 D:\Valheim\Nexusmods\EnhancedBosses\EnhancedBosses\obj\Debug\EnhancedBosses.csproj.AssemblyReference.cache
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\EnhancedBosses.dll.config
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\EnhancedBosses.dll
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\EnhancedBosses.pdb
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\0Harmony.dll
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\Jotunn.dll
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\Mono.Cecil.dll
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\Mono.Cecil.Mdb.dll
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\Mono.Cecil.Pdb.dll
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\Mono.Cecil.Rocks.dll
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\MonoMod.exe
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\MonoMod.RuntimeDetour.dll
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\MonoMod.Utils.dll
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\Newtonsoft.Json.dll
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\0Harmony.xml
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\Jotunn.pdb
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\Jotunn.xml
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\Mono.Cecil.pdb
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\Mono.Cecil.Mdb.pdb
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\Mono.Cecil.Pdb.pdb
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\Mono.Cecil.Rocks.pdb
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\MonoMod.xml
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\MonoMod.RuntimeDetour.xml
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\MonoMod.Utils.xml
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\bin\Debug\Newtonsoft.Json.xml
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\obj\Debug\EnhancedBosses.csproj.CoreCompileInputs.cache
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\obj\Debug\EnhancedBosses.csproj.CopyComplete
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\obj\Debug\EnhancedBosses.dll
-D:\GitHub\ValheimMods\EnhancedBosses\EnhancedBosses\obj\Debug\EnhancedBosses.pdb
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\obj\Debug\EnhancedBosses.csproj.CoreCompileInputs.cache
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\obj\Debug\EnhancedBosses.dll
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\obj\Debug\EnhancedBosses.pdb
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\EnhancedBosses.dll.config
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\EnhancedBosses.dll
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\EnhancedBosses.pdb
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\0Harmony.dll
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\Jotunn.dll
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\Mono.Cecil.dll
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\Mono.Cecil.Mdb.dll
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\Mono.Cecil.Pdb.dll
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\Mono.Cecil.Rocks.dll
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\MonoMod.exe
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\MonoMod.RuntimeDetour.dll
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\MonoMod.Utils.dll
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\Newtonsoft.Json.dll
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\0Harmony.xml
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\Jotunn.pdb
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\Jotunn.xml
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\Mono.Cecil.pdb
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\Mono.Cecil.Mdb.pdb
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\Mono.Cecil.Pdb.pdb
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\Mono.Cecil.Rocks.pdb
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\MonoMod.xml
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\MonoMod.RuntimeDetour.xml
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\MonoMod.Utils.xml
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\bin\Debug\Newtonsoft.Json.xml
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\obj\Debug\EnhancedBosses.csproj.CopyComplete
+E:\C#\Valheim\Nexusmods\EnhancedBosses v2.0.0\EnhancedBosses\obj\Debug\EnhancedBosses.csproj.AssemblyReference.cache
